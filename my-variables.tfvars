@@ -1,1 +1,1 @@
-orgName = "Demo Management Group 123"
+orgName = "Demo MGroup"
