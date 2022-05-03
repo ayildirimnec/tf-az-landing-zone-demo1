@@ -56,5 +56,4 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    commandOptions: '-out=tfplan'
     environmentServiceNameAzureRM: $(AzureConnector)
