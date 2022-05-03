@@ -14,6 +14,10 @@ provider "azurerm" {
   features {}
 }
 
+erraform {
+  backend "azurerm" {}
+}
+
 # You can use the azurerm_client_config data resource to dynamically
 # extract connection settings from the provider configuration.
 
