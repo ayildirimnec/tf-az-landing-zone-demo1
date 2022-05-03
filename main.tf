@@ -14,7 +14,7 @@ provider "azurerm" {
   features {}
 }
 
-erraform {
+terraform {
   backend "azurerm" {}
 }
 
