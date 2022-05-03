@@ -52,8 +52,15 @@ steps:
   name: 'terraformplan'
   displayName: 'Terrafrom Plan'
 
+
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
-    command: 'apply'
+    command: 'destroy'
     environmentServiceNameAzureRM: $(AzureConnector)
+
+# - task: TerraformTaskV2@2
+#   inputs:
+#     provider: 'azurerm'
+#     command: 'apply'
+#     environmentServiceNameAzureRM: $(AzureConnector)
