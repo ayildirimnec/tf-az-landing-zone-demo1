@@ -47,7 +47,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    commandOptions: '-out=tfplan'
+    commandOptions: '-input=false -out=$(Build.BinariesDirectory)/tfplan'
     environmentServiceNameAzureRM: $(AzureConnector)
   name: 'terraformplan'
   displayName: 'Terrafrom Plan'
