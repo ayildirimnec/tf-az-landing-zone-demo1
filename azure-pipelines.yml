@@ -51,3 +51,10 @@ steps:
     environmentServiceNameAzureRM: $(AzureConnector)
   name: 'terraformplan'
   displayName: 'Terrafrom Plan'
+
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: '-out=tfplan'
+    environmentServiceNameAzureRM: $(AzureConnector)
