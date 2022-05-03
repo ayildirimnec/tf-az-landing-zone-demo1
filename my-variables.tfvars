@@ -1,1 +1,1 @@
-root_name = "Demo Management Group 123"
+orgName = "Demo Management Group 123"
