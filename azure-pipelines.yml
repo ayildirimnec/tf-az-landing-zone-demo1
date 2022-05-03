@@ -17,6 +17,12 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
@@ -26,18 +32,21 @@ steps:
     backendAzureRmStorageAccountName: 'stlandingzonedemo1'
     backendAzureRmContainerName: 'tflandingzonedemocontainer1'
     backendAzureRmKey: 'tf/terraform.tfstate'
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  name: 'terraforminit'
+  displayName: 'Terrafrom Initialize'
+
 
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
     command: 'validate'
+  name: 'terraformvalidate'
+  displayName: 'Terrafrom Validate'
 
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: $(AzureConnector)
+  name: 'terraformplan'
+  displayName: 'Terrafrom Plan'
