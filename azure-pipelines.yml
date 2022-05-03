@@ -47,6 +47,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
+    commandOptions: '-out=tfplan'
     environmentServiceNameAzureRM: $(AzureConnector)
   name: 'terraformplan'
   displayName: 'Terrafrom Plan'
