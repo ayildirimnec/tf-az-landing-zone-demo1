@@ -31,7 +31,7 @@ steps:
     backendAzureRmResourceGroupName: 'rg-tf-landing-zone-demo1'
     backendAzureRmStorageAccountName: 'stlandingzonedemo1'
     backendAzureRmContainerName: 'tflandingzonedemocontainer1'
-    backendAzureRmKey: 'tf/terraform.tfstate'
+    backendAzureRmKey: 'terraform.tfstate'
   name: 'terraforminit'
   displayName: 'Terrafrom Initialize'
 
