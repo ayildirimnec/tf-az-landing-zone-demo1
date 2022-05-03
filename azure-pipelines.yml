@@ -21,7 +21,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'DevOpsPOCRG2Connection'
+    backendServiceArm: $(AzureConnector)
     backendAzureRmResourceGroupName: 'rg-tf-landing-zone-demo1'
     backendAzureRmStorageAccountName: 'stlandingzonedemo1'
     backendAzureRmContainerName: 'tflandingzonedemocontainer1'
@@ -40,4 +40,4 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    environmentServiceNameAzureRM: 'DevOpsPOCRG2Connection'
+    environmentServiceNameAzureRM: $(AzureConnector)
