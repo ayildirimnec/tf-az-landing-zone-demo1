@@ -22,7 +22,6 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
@@ -35,7 +34,6 @@ steps:
   name: 'terraforminit'
   displayName: 'Terrafrom Initialize'
 
-
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
@@ -47,7 +45,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    commandOptions: '-var-file=$(Build.BinariesDirectory)/tfvars.tf -input=false -out=$(Build.BinariesDirectory)/tfplan'
+    commandOptions: '-var-file=$(System.DefaultWorkingDirectory)/tfvars.tf -input=false -out=$(Build.BinariesDirectory)/tfplan'
     environmentServiceNameAzureRM: $(AzureConnector)
   name: 'terraformplan'
   displayName: 'Terrafrom Plan'
