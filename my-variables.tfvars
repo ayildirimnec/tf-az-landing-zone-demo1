@@ -1,1 +1,1 @@
-orgName = "Demo MGroup"
+orgName = "NEC Landing Zone MG"
