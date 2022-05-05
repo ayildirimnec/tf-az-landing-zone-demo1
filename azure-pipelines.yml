@@ -51,14 +51,32 @@ steps:
   displayName: 'Terrafrom Plan'
 
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveType: 'tar'
+    tarCompression: 'gz'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).tgz'
+    replaceExistingArchive: true
+    displayName: 'Create Plan Artifact'
+ 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: '$(Build.BuildId)-tfplan'
+    publishLocation: 'Container'
+    displayName: 'Publish Plan Artifact' 
+
 # - task: TerraformTaskV2@2
 #   inputs:
 #     provider: 'azurerm'
 #     command: 'destroy'
 #     environmentServiceNameAzureRM: $(AzureConnector)
 
-- task: TerraformTaskV2@2
-  inputs:
-    provider: 'azurerm'
-    command: 'apply'
-    environmentServiceNameAzureRM: $(AzureConnector)
+# - task: TerraformTaskV2@2
+#   inputs:
+#     provider: 'azurerm'
+#     command: 'apply'
+#     commandOptions: '-input=false'
+#     environmentServiceNameAzureRM: $(AzureConnector)
