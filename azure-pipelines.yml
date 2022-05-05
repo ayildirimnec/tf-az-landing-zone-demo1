@@ -72,6 +72,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'destroy'
+    commandOptions: '-input=false -var-file=my-variables.tfvars'
     environmentServiceNameAzureRM: $(AzureConnector)
 
 # - task: TerraformTaskV2@2
