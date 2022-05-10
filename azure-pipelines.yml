@@ -75,9 +75,9 @@ steps:
 #     commandOptions: '-input=false -var-file=my-variables.tfvars'
 #     environmentServiceNameAzureRM: $(AzureConnector)
 
-- task: TerraformTaskV2@2
-  # inputs:
-  #   provider: 'azurerm'
-  #   command: 'apply'
-  #   commandOptions: '-input=false -var-file=my-variables.tfvars'
-  #   environmentServiceNameAzureRM: $(AzureConnector)
+# - task: TerraformTaskV2@2
+#   inputs:
+#     provider: 'azurerm'
+#     command: 'apply'
+#     commandOptions: '-input=false -var-file=my-variables.tfvars'
+#     environmentServiceNameAzureRM: $(AzureConnector)
