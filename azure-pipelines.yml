@@ -68,12 +68,12 @@ steps:
     publishLocation: 'Container'
     displayName: 'Publish Plan Artifact' 
 
-# - task: TerraformTaskV2@2
-#   inputs:
-#     provider: 'azurerm'
-#     command: 'destroy'
-#     commandOptions: '-input=false -var-file=my-variables.tfvars'
-#     environmentServiceNameAzureRM: $(AzureConnector)
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'destroy'
+    commandOptions: '-input=false -var-file=my-variables.tfvars'
+    environmentServiceNameAzureRM: $(AzureConnector)
 
 # - task: TerraformTaskV2@2
 #   inputs:
